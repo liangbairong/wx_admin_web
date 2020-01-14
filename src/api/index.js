@@ -28,7 +28,7 @@ export default {
   user:{
     getUserInfo(param) {
       return http({
-        url:  process.env.VUE_APP_ROOT + '/needToken/user/getUserInfo',
+        url:  process.env.VUE_APP_ROOT + '/need_token/user/get',
         method: "get",
         data:{
          ...param,
@@ -37,7 +37,7 @@ export default {
     },
     updateUserInfo(param) {
       return http({
-        url:  process.env.VUE_APP_ROOT + '/needToken/user/updateUserInfo',
+        url:  process.env.VUE_APP_ROOT + '/need_token/user/update',
         method: "post",
         data:{
          ...param,

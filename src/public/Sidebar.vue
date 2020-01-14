@@ -49,7 +49,7 @@
                         title: '书籍列表'
                     },
                     {
-                        icon: 'el-icon-lx-cascades',
+                        icon: 'el-icon-lx-copy',
                         index: 'userInfo',
                         title: '用户信息'
                     },
