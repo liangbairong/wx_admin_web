@@ -35,7 +35,7 @@ export default {
   name: "userInfo",
   data() {
     return {
-      updateurl: process.env.VUE_APP_ROOT + "/upload",
+      updateurl: process.env.VUE_APP_ROOT + "/upload/head",
       header: {
         authorization: this.$myLocalStorage.get("token")
       },
@@ -63,7 +63,6 @@ export default {
   },
   created() {
     this.init();
-    console.log("kkkkkkkkkkkkkkkkkkkkkkkk");
     this.ws = new WebSocket("ws://127.0.0.1:3002");
     // 接收
     this.ws.onmessage = function(mes) {
@@ -97,14 +96,14 @@ export default {
       this.getUserInfo();
     },
     onSubmit() {
-      // this.$api.user.updateUserInfo({
-      //   name:this.form.name
-      // }).then(res => {
-      //   if(res.code===200){
-      //     this.$message.success("修改成功");
-      //     this.getUserInfo();
-      //   }
-      // });
+      this.$api.user.updateUserInfo({
+        name:this.form.name
+      }).then(res => {
+        if(res.code===200){
+          this.$message.success("修改成功");
+          this.getUserInfo();
+        }
+      });
       // 发送
       console.log("Sd");
       this.ws.send(this.form.name);
