@@ -11,45 +11,45 @@ export default new Router({
         },
         {
             path: '/',
-            component: resolve => require(['../public/Home.vue'], resolve),
+            component: resolve => require(['@/public/Home.vue'], resolve),
             meta: { title: '自述文件' }, 
             children:[
                 {
                     path: '/index',
-                    component: resolve => require(['../page/contents/index/index.vue'], resolve),
+                    component: resolve => require(['@/page/contents/index/index.vue'], resolve),
                     meta: { title: '系统首页', }
                 },
                 {
-                    path: '/list',
-                    component: resolve => require(['../page/contents/list/index.vue'], resolve),
+                    path: '/bookList',
+                    component: resolve => require(['@/page/contents/bookList/index.vue'], resolve),
                     meta: { title: '书籍列表' }
                 },
                 {
                   path: '/userInfo',
-                  component: resolve => require(['../page/contents/userInfo/index.vue'], resolve),
+                  component: resolve => require(['@/page/contents/userInfo/index.vue'], resolve),
                   meta: { title: '用户信息' }
               },
                 {
                     // 权限页面
                     path: '/permission',
-                    component: resolve => require(['../page/contents/Permission.vue'], resolve),
+                    component: resolve => require(['@/page/contents/Permission.vue'], resolve),
                     meta: { title: '权限测试', permission: true }
                 },
                 {
                     path: '/404',
-                    component: resolve => require(['../page/contents/404.vue'], resolve),
+                    component: resolve => require(['@/page/contents/404.vue'], resolve),
                     meta: { title: '404' }
                 },
                 {
                     path: '/403',
-                    component: resolve => require(['../page/contents/403.vue'], resolve),
+                    component: resolve => require(['@/page/contents/403.vue'], resolve),
                     meta: { title: '403' }
                 }
             ]
         },
         {
             path: '/login',
-            component: resolve => require(['../page/Login.vue'], resolve),
+            component: resolve => require(['@/page/Login.vue'], resolve),
             meta: { title: '登陆' }
         },
         {

@@ -4,11 +4,12 @@ import {
   myLocalStorage
 } from '@/uilts/uilts'
 
+const ROOT=process.env.VUE_APP_ROOT
 export default {
   common:{
     login(param) {
       return http({
-        url:  process.env.VUE_APP_ROOT + '/common/login',
+        url:  ROOT + '/common/login',
         method: "post",
         data:{
          ...param,
@@ -17,7 +18,7 @@ export default {
     }, 
     logout(param){
       return http({
-        url:  process.env.VUE_APP_ROOT + '/common/logout',
+        url: ROOT + '/common/logout',
         method: "post",
         data:{
          ...param,
@@ -28,7 +29,7 @@ export default {
   user:{
     getUserInfo(param) {
       return http({
-        url:  process.env.VUE_APP_ROOT + '/need_token/user/get',
+        url:  ROOT + '/user/get',
         method: "get",
         data:{
          ...param,
@@ -37,13 +38,37 @@ export default {
     },
     updateUserInfo(param) {
       return http({
-        url:  process.env.VUE_APP_ROOT + '/need_token/user/update',
+        url: ROOT + '/user/update',
         method: "post",
         data:{
          ...param,
         }
       })
     },
+  },
+  book:{
+    list(param){
+      return http({
+        url:  ROOT + '/book/list',
+        data:param
+      })
+    }
+  },
+  reptileBook:{
+    search(param){
+      return http({
+        url:  ROOT + '/reptileBook/search',
+        data:param
+      })
+    },
+    addBookList(param){
+      return http({
+        url: ROOT + '/reptileBook/addBookList',
+        method: "post",
+        data:param
+      })
+    }
+    
   }
  
  

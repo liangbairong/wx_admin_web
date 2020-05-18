@@ -46,11 +46,12 @@
         }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 .app_content{
   background:#fff;
-  height: 100%;
   padding: 20px;
-  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 30px;;
+  // box-sizing: border-box;
 }
 </style>

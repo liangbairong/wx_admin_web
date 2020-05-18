@@ -39,13 +39,13 @@
                 collapse: false,
                 items: [
                     {
-                        icon: 'el-icon-lx-home',
+                        icon: 'el-icon-house',
                         index: 'index',
                         title: '系统首页'
                     },
                     {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'list',
+                        icon: 'el-icon-tickets',
+                        index: 'bookList',
                         title: '书籍列表'
                     },
                     {
