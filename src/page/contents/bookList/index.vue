@@ -9,7 +9,7 @@
         <el-button type="primary" @click="add">导入书籍</el-button>
       </el-form-item>
     </el-form>
-    <el-table :data="tableData" max-height="300" border>
+    <el-table :data="tableData"  border >
       <el-table-column fixed prop="bookId" label="id" width="150"></el-table-column>
       <el-table-column prop="bookName" label="书名" width="120"></el-table-column>
       <el-table-column label="封面" width="80">
@@ -25,10 +25,15 @@
       <el-table-column fixed="right" label="操作" width="120">
         <template slot-scope="scope">
           <el-button
-            @click.native.prevent="deleteRow(scope.$index, tableData4)"
+            @click.native.prevent="update(scope.row)"
             type="text"
             size="small"
           >更新</el-button>
+          <el-button
+            @click.native.prevent="directory(scope.row)"
+            type="text"
+            size="small"
+          >目录</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -67,6 +72,7 @@ export default {
     getList() {
       console.log(1);
       this.loading=true;
+      this.tableData=[]
       this.$api.book.list(this.form).then(res => {
         if (res.code == 200) {
           this.tableData = res.data;
@@ -86,6 +92,23 @@ export default {
     },
     add() {
       this.$refs.addBook.show();
+    },
+    update(data){
+       this.$api.reptileBook.addBookDiretory(data).then(res => {
+        if (res.code == 200) {
+           this.$message.success('小说更新完毕');
+        }
+      });
+    },
+    directory(data){
+      this.$api.book.directory({bookId:data.bookId}).then(res => {
+        if (res.code == 200) {
+           
+        }
+      });
+    },
+    deleteRow(){
+
     }
   }
 };
@@ -93,6 +116,6 @@ export default {
 <style lang="scss" scoped>
 .book-img {
   width: 60px;
-  height: 100px;
+  height: 80px;
 }
 </style>

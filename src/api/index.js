@@ -52,6 +52,12 @@ export default {
         url:  ROOT + '/book/list',
         data:param
       })
+    },
+    directory(param){
+      return http({
+        url:  ROOT + '/book/directory',
+        data:param
+      })
     }
   },
   reptileBook:{
@@ -64,6 +70,13 @@ export default {
     addBookList(param){
       return http({
         url: ROOT + '/reptileBook/addBookList',
+        method: "post",
+        data:param
+      })
+    },
+    addBookDiretory(param){
+      return http({
+        url: ROOT + '/reptileBook/addBookDiretory',
         method: "post",
         data:param
       })

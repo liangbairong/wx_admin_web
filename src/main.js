@@ -13,7 +13,8 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 import './assets/css/icon.css';
 import './public/directives';
 import "babel-polyfill";
-
+import global from '@/mixin/global'
+Vue.use(global);
 Vue.config.productionTip = false
 // Vue.use(ElementUI, {
 //     size: 'small'

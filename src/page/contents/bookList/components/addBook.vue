@@ -1,5 +1,5 @@
 <template>
-  <subpage v-if="isShow" @close='close'>
+  <subpage v-if="isShow" @close="close">
     <el-form :inline="true" :model="form" size="small">
       <el-form-item label="网站">
         <el-select v-model="form.bookSource" placeholder="请选择要爬的网站">
@@ -19,11 +19,11 @@
         <el-button type="primary" @click="getList">爬虫查询</el-button>
       </el-form-item>
     </el-form>
-    
-     <el-table :data="tableData" max-height="350" border>
+
+    <el-table :data="tableData" max-height="350" border>
       <el-table-column fixed prop="bookId" label="id" width="150"></el-table-column>
       <el-table-column prop="bookName" label="书名" width="120"></el-table-column>
-       <el-table-column label="封面" width="80">
+      <el-table-column label="封面" width="80">
         <template slot-scope="scope">
           <img :src="scope.row.bookImage" class="book-img" alt />
         </template>
@@ -35,11 +35,7 @@
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="120">
         <template slot-scope="scope">
-          <el-button
-            @click="add(scope.row)"
-            type="text"
-            size="small"
-          >添加到数据库</el-button>
+          <el-button @click="add(scope.row)" type="text" size="small">添加到数据库</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -59,10 +55,9 @@ export default {
         bookName: "",
         bookSource: 1
       },
-      total:0,
-      tableData:[],
-      loading:false,
-
+      total: 0,
+      tableData: [],
+      loading: false
     };
   },
   components: {
@@ -78,22 +73,20 @@ export default {
     },
     getList() {
       console.log(1);
-      this.loading=true;
+      this.loading = true;
       this.$api.reptileBook.search(this.form).then(res => {
         if (res.code == 200) {
           this.tableData = res.data;
-          this.total=res.total;
+          this.total = res.total;
         }
-        this.loading=false;
+        this.loading = false;
       });
     },
-    search(){
-
-    },
-    add(item){
-        this.$api.reptileBook.addBookList({book:item}).then(res => {
+    search() {},
+    add(item) {
+      this.$api.reptileBook.addBookList({ book: item }).then(res => {
         if (res.code == 200) {
-         
+          this.$message.success('添加成功');
         }
       });
     }
