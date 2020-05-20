@@ -58,7 +58,20 @@ export default {
         url:  ROOT + '/book/directory',
         data:param
       })
-    }
+    },
+    content(param){
+      return http({
+        url:  ROOT + '/book/content',
+        data:param
+      })
+    },
+    deleteBook(param){
+      return http({
+        url:  ROOT + '/book/deleteBook',
+        method: "post",
+        data:param
+      })
+    },
   },
   reptileBook:{
     search(param){
