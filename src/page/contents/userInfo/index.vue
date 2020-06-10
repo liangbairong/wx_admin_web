@@ -35,7 +35,7 @@ export default {
   name: "userInfo",
   data() {
     return {
-      updateurl: process.env.VUE_APP_ROOT + "/upload/head",
+      updateurl: process.env.VUE_APP_ROOT + "/common/upload/head",
       header: {
         authorization: this.$myLocalStorage.get("token")
       },

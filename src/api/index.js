@@ -9,7 +9,7 @@ export default {
   common:{
     login(param) {
       return http({
-        url:  ROOT + '/common/login',
+        url:  ROOT + '/admin/user/login',
         method: "post",
         data:{
          ...param,
@@ -18,7 +18,7 @@ export default {
     }, 
     logout(param){
       return http({
-        url: ROOT + '/common/logout',
+        url: ROOT + '/admin/user/logout',
         method: "post",
         data:{
          ...param,
@@ -29,7 +29,7 @@ export default {
   user:{
     getUserInfo(param) {
       return http({
-        url:  ROOT + '/user/get',
+        url:  ROOT + '/admin/user/get',
         method: "get",
         data:{
          ...param,
@@ -38,7 +38,7 @@ export default {
     },
     updateUserInfo(param) {
       return http({
-        url: ROOT + '/user/update',
+        url: ROOT + '/admin/user/update',
         method: "post",
         data:{
          ...param,
@@ -49,25 +49,25 @@ export default {
   book:{
     list(param){
       return http({
-        url:  ROOT + '/book/list',
+        url:  ROOT + '/common/book/list',
         data:param
       })
     },
     directory(param){
       return http({
-        url:  ROOT + '/book/directory',
+        url:  ROOT + '/common/book/directory',
         data:param
       })
     },
     content(param){
       return http({
-        url:  ROOT + '/book/content',
+        url:  ROOT + '/common/book/content',
         data:param
       })
     },
     deleteBook(param){
       return http({
-        url:  ROOT + '/book/deleteBook',
+        url:  ROOT + '/common/book/deleteBook',
         method: "post",
         data:param
       })

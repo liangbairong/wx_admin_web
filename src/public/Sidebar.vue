@@ -49,7 +49,7 @@
                         title: '书籍列表'
                     },
                     {
-                        icon: 'el-icon-lx-copy',
+                        icon: 'el-icon-tickets',
                         index: 'userInfo',
                         title: '用户信息'
                     },

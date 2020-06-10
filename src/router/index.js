@@ -24,11 +24,11 @@ export default new Router({
           component: resolve => require(['@/page/contents/bookList/index.vue'], resolve),
           meta: { title: '书籍列表' }
         },
-        {
-          path: '/bookContent',
-          component: resolve => require(['@/page/contents/bookContent/index.vue'], resolve),
-          meta: { title: '内容' }
-        },
+        // {
+        //   path: '/bookContent',
+        //   component: resolve => require(['@/page/contents/bookContent/index.vue'], resolve),
+        //   meta: { title: '内容' }
+        // },
 
         {
           path: '/userInfo',
