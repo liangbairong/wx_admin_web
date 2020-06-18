@@ -76,20 +76,20 @@ export default {
   reptileBook:{
     search(param){
       return http({
-        url:  ROOT + '/reptileBook/search',
+        url:  ROOT + '/common/reptileBook/search',
         data:param
       })
     },
     addBookList(param){
       return http({
-        url: ROOT + '/reptileBook/addBookList',
+        url: ROOT + '/common/reptileBook/addBookList',
         method: "post",
         data:param
       })
     },
     addBookDiretory(param){
       return http({
-        url: ROOT + '/reptileBook/addBookDiretory',
+        url: ROOT + '/common/reptileBook/addBookDiretory',
         method: "post",
         data:param
       })
